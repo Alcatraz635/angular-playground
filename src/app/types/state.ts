@@ -8,6 +8,6 @@ export interface CharacterState {
   savedCharacters: Character[];
   characterSuggestionsIsPending: boolean;
   characterSuggestions: Character[];
-  apiAccessToken: string;
+  apiAccessToken: any;
 
 }

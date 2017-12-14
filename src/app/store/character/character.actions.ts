@@ -7,6 +7,7 @@ export const ADD_CHARACTER = '[Character] Add';
 export const REMOVE_CHARACTER = '[Character] Remove';
 export const REQUEST_CHARACTER_SUGGESTIONS = '[Character] Request Suggestions';
 export const RECEIVE_CHARACTER_SUGGESTIONS = '[Character] Receive Suggestions';
+export const CLEAR_CHARACTER_SUGGESTIONS = '[Character] Clear Suggestions'
 export const REQUEST_API_ACCESS_TOKEN = '[Character] Request API Token';
 export const RECEIVE_API_ACCESS_TOKEN = '[Character] Receive API Token';
 export const FAILED_TO_RECEIVE_API_ACCESS_TOKEN = '[Character] Failed To Receive API Token';
@@ -31,6 +32,10 @@ export class ReceiveCharacterSuggestions implements Action {
   constructor(public payload: any) {}
 }
 
+export class ClearCharacterSuggestions implements Action {
+  readonly type = CLEAR_CHARACTER_SUGGESTIONS;
+}
+
 export class RequestAPIAccessToken implements Action {
   readonly type = REQUEST_API_ACCESS_TOKEN;
 }
@@ -50,4 +55,5 @@ RequestCharacterSuggestions |
 ReceiveCharacterSuggestions |
 RequestAPIAccessToken |
 ReceiveAPIAccessToken |
-FailedToReceiveAPIAccessToken;
+FailedToReceiveAPIAccessToken |
+ClearCharacterSuggestions;

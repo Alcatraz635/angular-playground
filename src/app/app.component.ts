@@ -2,10 +2,10 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Component } from '@angular/core';
 
-import { CharacterState } from './../types/state';
-import { Character } from '../types/character';
-import * as characterActions from '../store/character/character.actions';
-import * as characterReducer from '../store/character/character.reducer';
+import { CharacterState } from './types/state';
+import { Character } from './types/character';
+import * as characterActions from './store/character/character.actions';
+import * as characterReducer from './store/character/character.reducer';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import * as characterReducer from '../store/character/character.reducer';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'anime characters';
+  title = 'my playground';
   savedCharacters$: Observable<Character[]>;
 
   constructor(private store: Store<CharacterState>) {

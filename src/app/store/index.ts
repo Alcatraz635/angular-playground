@@ -2,7 +2,7 @@ import { CharacterEffects } from './character/character.effects';
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { character } from './character/character.reducer';
 import { AppState } from './../types/state';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 
 export const reducers: ActionReducerMap<AppState> = {
   characterState: character,

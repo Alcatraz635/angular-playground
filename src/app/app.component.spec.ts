@@ -1,9 +1,9 @@
-import { reducers } from './../store/index';
+import { reducers } from './store/index';
 import { Store, StoreModule } from '@ngrx/store';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import { CharacterState } from '../types/state';
+import { CharacterState } from './types/state';
 
 describe('Given AppComponent', () => {
   let component: AppComponent;

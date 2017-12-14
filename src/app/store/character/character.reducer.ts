@@ -9,7 +9,7 @@ export const INITIAL_STATE: CharacterState = Object.freeze({
   savedCharacters: [],
   characterSuggestionsIsPending: false,
   characterSuggestions: [],
-  apiAccessToken: 'fake',
+  apiAccessToken: undefined,
 });
 type Action = CharacterActions.All;
 
@@ -28,7 +28,12 @@ export const character = (state = INITIAL_STATE, action: Action): CharacterState
     case CharacterActions.RECEIVE_CHARACTER_SUGGESTIONS:
       return {
         ...state,
-        characterSuggestions: [action.payload],
+        characterSuggestions: action.payload,
+      };
+    case CharacterActions.CLEAR_CHARACTER_SUGGESTIONS:
+      return {
+        ...state,
+        characterSuggestions: [],
       };
     case CharacterActions.RECEIVE_API_ACCESS_TOKEN:
       return {
@@ -49,6 +54,11 @@ export const getCharacterState = createFeatureSelector<CharacterState>('characte
 export const getSavedCharacters = createSelector(
   getCharacterState,
   (state: CharacterState) => state.savedCharacters,
+);
+
+export const getChracterSuggestions = createSelector(
+  getCharacterState,
+  (state: CharacterState) => state.characterSuggestions,
 );
 export const getAPIAcessToken = createSelector(
   getCharacterState,

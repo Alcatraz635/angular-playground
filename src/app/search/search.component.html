@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <form class="d-flex justify-content-between align-items-center w-100 mb-0">
+        <span>My Playground</span>
+        <mat-form-field class="w-25">
+            <input
+                matInput
+                placeholder="Search..."
+                aria-label="Search"
+                [matAutocomplete]="auto"
+                [formControl]="searchCtrl"
+            >
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option
+                    *ngFor="let character of characterSuggestions$ | async"
+                    class="pl-0"
+                >
+                    <img
+                        src="{{character.image_url_med}}"
+                        class="h-100"
+                    >
+                    <span>
+                        {{ character.name_first }} {{ character.name_last }}
+                    </span>
+                    <span>{{ character.name_japanese }}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</mat-toolbar>
